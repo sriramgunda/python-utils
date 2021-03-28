@@ -40,8 +40,7 @@ def to_htmltable(data):
                 if header_count == 0:
                     for key in row.keys():
                         columns.append(key)
-                    print(columns)
-                    #trow = "<tr>"
+                    #print(columns)
                     thdata = ""
                     for col in columns:
                        thdata += "<th>" + col + "</th>"
@@ -52,19 +51,16 @@ def to_htmltable(data):
                     for col in columns:
                         thdata += "<td>" + row[col] + "</td>"
                     trdata.append("<tr>" + thdata + "</tr>")
-        print(trdata)
+        #print(trdata)
         trdata = ''.join(trdata)
         body_content += trdata + "</tr>"
-            
-        #ht.write("<tr><th class='cells'>Name</th><th>URL</th>")
-        body_content += "</div>"
-        print(body_content)
-        
+        body_content += "</div>"        
         ht.write(body_content + table_end + htmlpage_end)
+    return body_content
 
 if __name__ == '__main__':
     data = [{'firstname': 'John', 'lastname':'Walker'},
 	    {'firstname': 'Clark', 'lastname':'Alex'},
 	    {'firstname': 'Scott', 'lastname':'Ben'},
             {'lastname':'Sean', 'firstname':'Goldman'}]
-    to_htmltable(data)
+    print(to_htmltable(data))
