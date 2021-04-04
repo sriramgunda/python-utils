@@ -4,6 +4,7 @@ from collections import Counter
 names = ['sriram', 'harish', 'ravi', 'nava', 'harish', 'sriram', 'sriram']
 count_names = Counter(names)
 print(count_names)
+print(type(count_names))
 print(count_names.most_common()[0])
   
 namelist = ['sriram','harish','ravi','nava', 'mouni']
